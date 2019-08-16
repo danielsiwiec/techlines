@@ -1,0 +1,45 @@
+{
+  "projects": [
+    {
+      "name": "Genentech - AWS PoC",
+      "team": [
+        "Dan Siwiec", "Amarpreet Singh", "Princess Allen"
+      ],
+      "stack": [
+        "terraform", "jenkins", "aws", "elasticbeanstalk"
+      ]
+    },
+    {
+      "name": "Genentech - Microservices Workshop",
+      "team": [
+        "Dan Siwiec", "Sameer Karim"
+      ],
+      "stack": [
+        "microservices"
+      ]
+    },
+    {
+      "name": "Genentech - TaPIR API",
+      "team": [
+        "Dan Siwiec", "Pallavi Chamarathy"
+      ],
+      "stack": [
+        "microservices"
+      ]
+    },
+    {
+      "name": "CCPOA",
+      "team": [
+        "Amarpreet Singh"
+      ],
+      "stack": [".NET"]
+    },
+    {
+      "name": "Peet's",
+      "team": [
+        "Amarpreet Singh"
+      ],
+      "stack": [".NET"]
+    }
+  ]
+}

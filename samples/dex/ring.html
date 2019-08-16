@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body, #Chart {
+            height: 100%;
+            min-height: 100%;
+            width: 100%;
+            min-width: 100%;
+        }
+        #Chart {
+            display: inline-block;
+        }
+    </style>
+    <title>dex.js : D3Plus Ring Network</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="https://dexjs.net/js/dex-jquery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"/>
+    <link rel="stylesheet" href="https://dexjs.net/js/dex-bootstrap.css">
+    <link rel="stylesheet" href="https://dexjs.net/js/dex.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://dexjs.net/js/dex-jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://dexjs.net/js/dex-bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://dexjs.net/js/dex-libs.js"></script>
+    <script src="https://dexjs.net/js/dex.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+<body>
+<div class="ui-layout-center">
+    <div id="Chart"></div>
+</div>
+<!-- <div class="ui-layout-west"> -->
+    <!-- <div id="ConfigurationPane"></div> -->
+<!-- </div> -->
+
+<script src="http://www.d3plus.org/js/d3plus.js"></script>
+
+<script>
+  var csv = new dex.csv({
+    'header': ["President", "Party", "Home State"],
+    'data': [
+      ["George Washington", "Independent", "Virginia"],
+      ["John Adams", "Federalist", "Massachusetts"],
+      ["Thomas Jefferson", "Democratic-Republican", "Virginia"],
+      ["James Madison", "Democratic-Republican", "Virginia"],
+      ["James Monroe", "Democratic-Republican", "Virginia"],
+      ["John Quincy Adams", "Democratic-Republican/National Republican", "Massachusetts"],
+      ["Andrew Jackson", "Democratic", "Tennessee"],
+      ["Martin Van Buren", "Democratic", "New York"],
+      ["William Henry Harrison", "Whig", "Ohio"],
+      ["John Tyler", "Whig", "Virginia"],
+      ["James K. Polk", "Democratic", "Tennessee"],
+      ["Zachary Taylor", "Whig", "Louisiana"],
+      ["Millard Fillmore", "Whig", "New York"],
+      ["Franklin Pierce", "Democratic", "New Hampshire"],
+      ["James Buchanan", "Democratic", "Pennsylvania"],
+      ["Abraham Lincoln", "Republican/National Union", "Illinois"],
+      ["Andrew Johnson", "Democratic/National Union", "Tennessee"],
+      ["Ulysses S. Grant", "Republican", "Ohio"],
+      ["Rutherford B. Hayes", "Republican", "Ohio"],
+      ["James A. Garfield", "Republican", "Ohio"],
+      ["Chester A. Arthur", "Republican", "New York"],
+      ["Grover Cleveland", "Democratic", "New York"],
+      ["Benjamin Harrison", "Republican", "Indiana"],
+      ["Grover Cleveland (2nd term)", "Democratic", "New York"],
+      ["William McKinley", "Republican", "Ohio"],
+      ["Theodore Roosevelt", "Republican", "New York"],
+      ["William Howard Taft", "Republican", "Ohio"],
+      ["Woodrow Wilson", "Democratic", "New Jersey"],
+      ["Warren G. Harding", "Republican", "Ohio"],
+      ["Calvin Coolidge", "Republican", "Massachusetts"],
+      ["Herbert Hoover", "Republican", "Iowa"],
+      ["Franklin D. Roosevelt", "Democratic", "New York"],
+      ["Harry S. Truman", "Democratic", "Missouri"],
+      ["Dwight D. Eisenhower", "Republican", "Texas"],
+      ["John F. Kennedy", "Democratic", "Massachusetts"],
+      ["Lyndon B. Johnson", "Democratic", "Texas"],
+      ["Richard Nixon", "Republican", "California"],
+      ["Gerald Ford", "Republican", "Michigan"],
+      ["Jimmy Carter", "Democratic", "Georgia"],
+      ["Ronald Reagan", "Republican", "California"],
+      ["George H. W. Bush", "Republican", "Texas"],
+      ["Bill Clinton", "Democratic", "Arkansas"],
+      ["George W. Bush", "Republican", "Texas"],
+      ["Barack Obama", "Democratic", "Illinois"]
+    ]
+  });
+  $('body').layout({
+    applyDemoStyles: false,
+    west: {
+      size: 360
+    },
+    onresize: function () {
+      chart.resize();
+    }
+  });
+  // Configure a chart.
+  var chart = dex.charts.d3plus.RingNetwork({
+      'parent': '#Chart',
+      //'connect': 'first',
+      'type': 'rings',
+      'edges': {'arrows': true},
+      'csv': csv
+    }
+  );
+  chart.render();
+  // var configPane = dex.ui.ConfigurationPane({
+  //   "parent": "#ConfigurationPane",
+  //   "csv": csv,
+  //   "components": [chart]
+  // }).render();
+</script>

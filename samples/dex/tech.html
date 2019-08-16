@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    html,
+    body,
+    #Chart {
+      height: 100%;
+      min-height: 100%;
+      width: 100%;
+      min-width: 100%;
+    }
+
+    #Chart {
+      display: inline-block;
+    }
+  </style>
+  <title>dex.js : D3Plus Ring Network</title>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.theme.min.css">
+  <link rel="stylesheet" href="https://dexjs.net/js/dex-jquery.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" />
+  <link rel="stylesheet" href="https://dexjs.net/js/dex-bootstrap.css">
+  <link rel="stylesheet" href="https://dexjs.net/js/dex.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://dexjs.net/js/dex-jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://dexjs.net/js/dex-bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://dexjs.net/js/dex-libs.js"></script>
+  <script src="https://dexjs.net/js/dex.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/3.6.1/echarts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+
+<body>
+
+
+  <div id="ConfigurationPane"></div>
+  <div id="Chart"></div>
+
+  <script>
+    d3.json("presidents.json", function (error, data) {
+      var csv = new dex.csv(data);
+
+      chart = dex.charts.echarts.Network({
+        "parent": "#Chart",
+        categories: 1,
+        "csv": csv,
+        "series.layout": "circular"
+      }).render();
+
+      var configPane = dex.ui.ConfigurationPane({
+        parent: "#ConfigurationPane",
+        csv: csv,
+        components: [chart]
+      }).render();
+    });
+  </script>

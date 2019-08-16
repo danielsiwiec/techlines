@@ -1,0 +1,27 @@
+{
+  "nodes": [
+    {
+      "name": "Dan Siwiec",
+      "category": 0
+    },
+    {
+      "name": "Amarpreet Singh",
+      "category": 0
+    },
+    {
+      "name": "Princess Allen",
+      "category": 0
+    },
+    {
+      "name": "Genentech - AWS PoC",
+      "category": 1
+    }
+  ],
+  "links": [
+    {
+      "id": 0,
+      "source": "Dan Siwiec",
+      "target": "Genentech - AWS PoC"
+    }
+  ]
+}
