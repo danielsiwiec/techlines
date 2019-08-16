@@ -3,7 +3,7 @@
     {
       "name": "Genentech - AWS PoC",
       "team": [
-        "Dan Siwiec", "Amarpreet Singh", "Princess Allen"
+        "Dan Siwiec", "Amarpreet Singh", "Princess Allen", "Marcelo Ventura"
       ],
       "stack": [
         "terraform", "jenkins", "aws", "elasticbeanstalk"
@@ -32,14 +32,21 @@
       "team": [
         "Amarpreet Singh"
       ],
-      "stack": [".NET"]
+      "stack": [".net"]
     },
     {
-      "name": "Peet's",
+      "name": "Peet's - .NET thingy",
       "team": [
-        "Amarpreet Singh"
+        "Amarpreet Singh", "Jacky Bouier"
       ],
-      "stack": [".NET"]
+      "stack": [".net"]
+    },
+    {
+      "name": "Peet's - DevOps",
+      "team": [
+        "Marcelo Ventura"
+      ],
+      "stack": ["azure", "terraform"]
     }
   ]
 }
